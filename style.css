@@ -1,20 +1,27 @@
-/* Typography */
 @import url("https://rsms.me/inter/inter.css");
 
 :root {
-  --text: #111;
-  --muted: #555;
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
   --border: #e5e7eb;
   --accent: #2563eb;
-  --bg: #ffffff;
+}
+
+body.dark {
+  --bg: #0b0f19;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #1f2933;
 }
 
 body {
   margin: 0;
   font-family: "Inter", system-ui, sans-serif;
-  color: var(--text);
   background: var(--bg);
+  color: var(--text);
   line-height: 1.7;
+  transition: background 0.3s, color 0.3s;
 }
 
 /* Layout */
@@ -45,6 +52,10 @@ h2 {
   margin-bottom: 24px;
 }
 
+h3 {
+  margin-bottom: 8px;
+}
+
 p {
   max-width: 650px;
 }
@@ -65,13 +76,13 @@ p {
   flex-wrap: wrap;
 }
 
-.links a {
-  text-decoration: none;
+a {
   color: var(--accent);
+  text-decoration: none;
   font-weight: 500;
 }
 
-.resume {
+.resume-link {
   border-bottom: 2px solid var(--accent);
 }
 
@@ -88,21 +99,48 @@ p {
   border-radius: 12px;
 }
 
-/* Footer */
-footer {
-  padding-top: 80px;
-  padding-bottom: 80px;
+/* Dark mode toggle */
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 14px;
+  cursor: pointer;
   color: var(--muted);
 }
 
-/* Scroll animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+/* Footer */
+footer {
+  padding: 80px 24px;
+  color: var(--muted);
+  max-width: 760px;
+  margin: auto;
 }
 
-.fade-in.show {
+/* Scroll animation */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
+
+.fade.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Print (ATS resume) */
+@media print {
+  .toggle, nav, footer {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .container {
+    padding: 40px 0;
+  }
 }
