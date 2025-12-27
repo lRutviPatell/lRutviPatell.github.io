@@ -1,9 +1,32 @@
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --text: #e6edf3;
+  --accent: #00c6ff;
+}
+
+.light {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --text: #111;
+}
+
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background: #0d1117;
-  color: #e6edf3;
-  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: var(--card);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 header {
@@ -13,16 +36,18 @@ header {
   color: #fff;
 }
 
-.typing {
-  font-size: 1.2rem;
-  margin-top: 10px;
+.links a {
+  margin: 6px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.links a {
-  margin: 0 10px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
+.resume-btn {
+  background: #fff;
+  color: #0072ff !important;
+  padding: 6px 12px;
+  border-radius: 6px;
 }
 
 section {
@@ -31,47 +56,19 @@ section {
   padding: 2.5rem 1.5rem;
 }
 
-h2 {
-  border-bottom: 2px solid #00c6ff;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.grid {
+.grid, .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 12px;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-.grid div {
-  background: #161b22;
-  padding: 12px;
-  text-align: center;
-  border-radius: 8px;
-}
-
-/* PROJECT CARDS */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: #161b22;
+.card, .grid div {
+  background: var(--card);
   padding: 20px;
   border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0, 198, 255, 0.2);
-}
-
-footer {
-  text-align: center;
-  padding: 2rem;
-  background: #161b22;
-  color: #8b949e;
 }
