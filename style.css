@@ -21,7 +21,6 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
-  transition: background 0.3s, color 0.3s;
 }
 
 /* Layout */
@@ -31,12 +30,11 @@ body {
   padding: 96px 24px;
 }
 
-header {
+.hero {
   padding-top: 140px;
   padding-bottom: 120px;
 }
 
-/* Text */
 h1 {
   font-size: 2.6rem;
   margin-bottom: 12px;
@@ -52,113 +50,6 @@ h2 {
   margin-bottom: 24px;
 }
 
-h3 {
-  margin-bottom: 8px;
-}
-
-p {
-  max-width: 650px;
-}
-
-.muted {
-  color: var(--muted);
-}
-
-.mt {
-  margin-top: 24px;
-}
-
-/* Links */
-.links {
-  margin-top: 32px;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.resume-link {
-  border-bottom: 2px solid var(--accent);
-}
-
-/* Cards */
-.cards {
-  display: grid;
-  gap: 24px;
-  margin-top: 24px;
-}
-
-.card {
-  border: 1px solid var(--border);
-  padding: 24px;
-  border-radius: 12px;
-}
-
-/* Dark mode toggle */
-.toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  font-size: 14px;
-  cursor: pointer;
-  color: var(--muted);
-}
-
-/* Footer */
-footer {
-  padding: 80px 24px;
-  color: var(--muted);
-  max-width: 760px;
-  margin: auto;
-}
-
-/* Scroll animation */
-.fade {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.8s ease;
-}
-
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Print (ATS resume) */
-@media print {
-  .toggle, nav, footer {
-    display: none;
-  }
-
-  body {
-    background: white;
-    color: black;
-  }
-
-  .container {
-    padding: 40px 0;
-  }
-}
-
-/* HERO ANIMATION */
-.hero-title {
-  animation: slideDown 0.9s ease forwards;
-}
-
-.hero-sub {
-  animation: fadeUp 1.2s ease forwards;
-}
-
-.hero-links {
-  animation: fadeUp 1.4s ease forwards;
-}
-
-/* Section title underline animation */
 .section-title {
   position: relative;
   display: inline-block;
@@ -179,18 +70,16 @@ footer {
   width: 100%;
 }
 
-/* Card hover */
-.card {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+.links {
+  margin-top: 32px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
-}
-
-/* Link underline animation */
 a {
+  color: var(--accent);
+  text-decoration: none;
   position: relative;
 }
 
@@ -209,13 +98,92 @@ a:hover::after {
   width: 100%;
 }
 
-/* Keyframes */
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+.resume-link {
+  border-bottom: 2px solid var(--accent);
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.cards {
+  display: grid;
+  gap: 24px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  padding: 24px;
+  border-radius: 14px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.12);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.mt {
+  margin-top: 24px;
+}
+
+.footer {
+  padding: 80px 24px;
+  max-width: 760px;
+  margin: auto;
+  color: var(--muted);
+}
+
+/* Dark mode toggle */
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 10;
+  color: var(--muted);
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Background effects */
+.bg-effects {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(37,99,235,0.25), transparent 70%);
+  filter: blur(80px);
+  animation: float 20s infinite alternate ease-in-out;
+}
+
+.blob-1 { top: -120px; left: -120px; }
+.blob-2 { bottom: -150px; right: -120px; animation-duration: 24s; }
+.blob-3 { top: 30%; right: -150px; animation-duration: 28s; }
+
+@keyframes float {
+  to { transform: translate(80px, 60px); }
+}
+
+#particles {
+  position: absolute;
+  inset: 0;
+  opacity: 0.25;
 }
