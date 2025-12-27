@@ -144,3 +144,78 @@ footer {
     padding: 40px 0;
   }
 }
+
+/* HERO ANIMATION */
+.hero-title {
+  animation: slideDown 0.9s ease forwards;
+}
+
+.hero-sub {
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.hero-links {
+  animation: fadeUp 1.4s ease forwards;
+}
+
+/* Section title underline animation */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: var(--accent);
+  transition: width 0.6s ease;
+}
+
+.section.reveal.show .section-title::after {
+  width: 100%;
+}
+
+/* Card hover */
+.card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
+}
+
+/* Link underline animation */
+a {
+  position: relative;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Keyframes */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
