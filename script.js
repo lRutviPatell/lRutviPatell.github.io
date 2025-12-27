@@ -1,37 +1,37 @@
-const text = [
+// Typing effect
+const roles = [
   "Graduate Student in Health Informatics",
   "Healthcare Data Analytics",
   "AI in Healthcare",
   "Pharm D | Clinical Informatics"
 ];
 
-let index = 0;
-let charIndex = 0;
-const speed = 80;
-const eraseSpeed = 40;
-const delay = 1500;
+let i = 0, j = 0;
+const typed = document.getElementById("typed-text");
 
-const typedText = document.getElementById("typed-text");
-
-function typeEffect() {
-  if (charIndex < text[index].length) {
-    typedText.textContent += text[index].charAt(charIndex);
-    charIndex++;
-    setTimeout(typeEffect, speed);
+function type() {
+  if (j < roles[i].length) {
+    typed.textContent += roles[i][j++];
+    setTimeout(type, 80);
   } else {
-    setTimeout(eraseEffect, delay);
+    setTimeout(erase, 1500);
   }
 }
 
-function eraseEffect() {
-  if (charIndex > 0) {
-    typedText.textContent = text[index].substring(0, charIndex - 1);
-    charIndex--;
-    setTimeout(eraseEffect, eraseSpeed);
+function erase() {
+  if (j > 0) {
+    typed.textContent = roles[i].slice(0, --j);
+    setTimeout(erase, 40);
   } else {
-    index = (index + 1) % text.length;
-    setTimeout(typeEffect, speed);
+    i = (i + 1) % roles.length;
+    setTimeout(type, 80);
   }
 }
 
-document.addEventListener("DOMContentLoaded", typeEffect);
+type();
+
+// Theme toggle
+const toggle = document.getElementById("theme-toggle");
+toggle.onclick = () => {
+  document.body.classList.toggle("light");
+};
