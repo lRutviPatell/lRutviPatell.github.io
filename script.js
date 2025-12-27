@@ -13,14 +13,20 @@ const observer = new IntersectionObserver(
 
 elements.forEach(el => observer.observe(el));
 
-/* Scroll animations */
-document.querySelectorAll(".fade").forEach(el => {
-  new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) el.classList.add("show");
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
     });
-  }, { threshold: 0.15 }).observe(el);
-});
+  },
+  { threshold: 0.2 }
+);
+
+reveals.forEach(el => observer.observe(el));
 
 /* Dark mode */
 const toggle = document.getElementById("toggle");
