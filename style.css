@@ -1,9 +1,6 @@
 @import url("https://rsms.me/inter/inter.css");
 
-/* ===============================
-   THEME VARIABLES
-   =============================== */
-
+/* THEME VARIABLES */
 :root {
   --bg: #0d1117;
   --card: #161b22;
@@ -21,32 +18,23 @@ body.light {
   --border: #e5e7eb;
 }
 
-/* ===============================
-   GLOBAL
-   =============================== */
-
-* {
-  box-sizing: border-box;
-}
+/* GLOBAL */
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   font-family: Inter, system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.7;
 }
 
-/* ===============================
-   NAVBAR
-   =============================== */
-
+/* NAVBAR */
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 100;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
+  z-index: 100;
 }
 
 .nav-inner {
@@ -60,10 +48,8 @@ body {
 
 .logo {
   font-weight: 600;
-  font-size: 1rem;
 }
 
-/* Nav links */
 .nav-links {
   display: flex;
   gap: 16px;
@@ -80,27 +66,29 @@ body {
   color: var(--text);
 }
 
-/* Nav actions */
-.nav-actions button {
-  margin-left: 8px;
+/* NAV BUTTONS */
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 6px 12px;
+  border-radius: 6px;
   background: var(--card);
   color: var(--text);
   border: 1px solid var(--border);
-  border-radius: 6px;
   cursor: pointer;
+  text-decoration: none;
 }
 
-/* ===============================
-   MOBILE NAV
-   =============================== */
-
+/* MOBILE MENU */
 .menu-toggle {
   display: none;
   font-size: 1.4rem;
-  background: none;
-  border: none;
+  background: var(--card);
+  border: 1px solid var(--border);
   color: var(--text);
+  border-radius: 6px;
+  padding: 4px 8px;
   cursor: pointer;
 }
 
@@ -110,6 +98,7 @@ body {
   }
 
   .nav-links {
+    display: none;
     position: absolute;
     top: 60px;
     right: 24px;
@@ -118,7 +107,6 @@ body {
     padding: 12px;
     border-radius: 8px;
     border: 1px solid var(--border);
-    display: none;
   }
 
   .nav-links.show {
@@ -126,10 +114,7 @@ body {
   }
 }
 
-/* ===============================
-   HERO
-   =============================== */
-
+/* HERO */
 .hero {
   min-height: 80vh;
   padding: 120px 24px 80px;
@@ -138,7 +123,6 @@ body {
 
 .hero h1 {
   font-size: 3rem;
-  margin-bottom: 16px;
 }
 
 .subtitle {
@@ -147,78 +131,36 @@ body {
 }
 
 .hero-actions a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   margin: 6px;
   padding: 10px 16px;
-  border-radius: 8px;
   border: 1px solid var(--border);
+  border-radius: 8px;
   color: var(--text);
   text-decoration: none;
 }
 
-.hero-actions a.primary {
-  background: var(--accent);
-  color: #ffffff;
-  border: none;
-}
-
-/* PDF icon */
-.pdf-icon {
-  font-size: 1.1rem;
-}
-
-/* ===============================
-   SECTIONS
-   =============================== */
-
+/* SECTIONS */
 .section {
   max-width: 760px;
   margin: auto;
   padding: 100px 24px;
 }
 
-.section h2 {
-  margin-bottom: 24px;
-}
-
-/* ===============================
-   SKILLS GRID
-   =============================== */
-
+/* GRID & CARDS */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 14px;
 }
 
-.grid span {
-  background: var(--card);
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-/* ===============================
-   PROJECT CARDS
-   =============================== */
-
-.cards {
-  display: grid;
-  gap: 24px;
-}
-
+.grid span,
 .card {
   background: var(--card);
-  padding: 24px;
-  border-radius: 12px;
+  padding: 16px;
+  border-radius: 8px;
 }
 
-/* ===============================
-   REVEAL ANIMATION
-   =============================== */
-
+/* REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -230,12 +172,9 @@ body {
   transform: none;
 }
 
-/* ===============================
-   FOOTER
-   =============================== */
-
+/* FOOTER */
 .footer {
   text-align: center;
-  padding: 60px 24px;
+  padding: 60px;
   color: var(--muted);
 }
