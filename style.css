@@ -38,7 +38,7 @@ body {
 }
 
 /* ===============================
-   NAVBAR (FIXED BOTH THEMES)
+   NAVBAR
    =============================== */
 
 .navbar {
@@ -61,11 +61,15 @@ body {
 .logo {
   font-weight: 600;
   font-size: 1rem;
-  color: var(--text);
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 16px;
 }
 
 .nav-links a {
-  margin: 0 10px;
   color: var(--muted);
   text-decoration: none;
   font-weight: 500;
@@ -76,18 +80,50 @@ body {
   color: var(--text);
 }
 
+/* Nav actions */
 .nav-actions button {
   margin-left: 8px;
   padding: 6px 12px;
-  border-radius: 6px;
   background: var(--card);
   color: var(--text);
   border: 1px solid var(--border);
+  border-radius: 6px;
   cursor: pointer;
 }
 
-.nav-actions button:hover {
-  opacity: 0.9;
+/* ===============================
+   MOBILE NAV
+   =============================== */
+
+.menu-toggle {
+  display: none;
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 24px;
+    background: var(--card);
+    flex-direction: column;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
 }
 
 /* ===============================
@@ -111,7 +147,9 @@ body {
 }
 
 .hero-actions a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   margin: 6px;
   padding: 10px 16px;
   border-radius: 8px;
@@ -124,6 +162,11 @@ body {
   background: var(--accent);
   color: #ffffff;
   border: none;
+}
+
+/* PDF icon */
+.pdf-icon {
+  font-size: 1.1rem;
 }
 
 /* ===============================
@@ -195,25 +238,4 @@ body {
   text-align: center;
   padding: 60px 24px;
   color: var(--muted);
-}
-
-/* ===============================
-   PRINT MODE (CLEAN)
-   =============================== */
-
-@media print {
-  .navbar,
-  .hero-actions,
-  .nav-actions {
-    display: none;
-  }
-
-  body {
-    background: white;
-    color: black;
-  }
-
-  .section {
-    padding: 40px 0;
-  }
 }
