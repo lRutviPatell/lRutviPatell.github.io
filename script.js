@@ -1,21 +1,24 @@
-/* Scroll progress */
+/* Progress bar */
 window.addEventListener("scroll", () => {
   const h = document.documentElement;
-  const progress = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-  document.getElementById("progress-bar").style.width = progress + "%";
+  document.getElementById("progress-bar").style.width =
+    (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 + "%";
 });
 
-/* Reveal */
-const reveals = document.querySelectorAll(".reveal");
+/* Reveal + skill animation */
 const observer = new IntersectionObserver(entries => {
-  entries.forEach((e, i) => {
+  entries.forEach(e => {
     if (e.isIntersecting) {
-      e.target.style.transitionDelay = `${i * 0.08}s`;
       e.target.classList.add("show");
+
+      e.target.querySelectorAll(".bar div").forEach(bar => {
+        bar.style.width = bar.dataset.level + "%";
+      });
     }
   });
 }, { threshold: 0.2 });
-reveals.forEach(el => observer.observe(el));
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
 /* Dark mode */
 const toggle = document.getElementById("toggle");
@@ -25,25 +28,19 @@ toggle.onclick = () => {
   localStorage.theme = document.body.classList.contains("dark") ? "dark" : "light";
 };
 
-/* Mouse glow */
+/* Cursor glow */
 const glow = document.getElementById("cursor-glow");
 document.addEventListener("mousemove", e => {
   glow.style.left = e.clientX + "px";
   glow.style.top = e.clientY + "px";
 });
 
-/* Skill bars */
-document.querySelectorAll(".bar div").forEach(bar => {
-  const level = bar.dataset.level;
-  observer.observe(bar);
-  bar.style.width = level + "%";
-});
-
-/* Particle background */
+/* Particles */
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 canvas.width = innerWidth;
 canvas.height = innerHeight;
+
 let particles = Array.from({ length: 40 }, () => ({
   x: Math.random() * canvas.width,
   y: Math.random() * canvas.height,
