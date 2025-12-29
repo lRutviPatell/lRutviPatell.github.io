@@ -107,3 +107,18 @@ window.addEventListener("beforeprint", () => {
 window.addEventListener("afterprint", () => {
   document.body.classList.remove("print");
 });
+
+/* Mobile menu toggle */
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+
+/* Close menu on link click (mobile) */
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("show");
+  });
+});
