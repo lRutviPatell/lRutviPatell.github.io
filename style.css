@@ -1,10 +1,15 @@
 @import url("https://rsms.me/inter/inter.css");
 
+/* ===============================
+   THEME VARIABLES
+   =============================== */
+
 :root {
   --bg: #0d1117;
   --card: #161b22;
   --text: #e6edf3;
   --muted: #8b949e;
+  --border: #30363d;
   --accent: #3b82f6;
 }
 
@@ -13,6 +18,15 @@ body.light {
   --card: #f3f4f6;
   --text: #111827;
   --muted: #4b5563;
+  --border: #e5e7eb;
+}
+
+/* ===============================
+   GLOBAL
+   =============================== */
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -20,73 +34,70 @@ body {
   font-family: Inter, system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
+  line-height: 1.7;
 }
 
-/* NAVBAR – FIXED CONTRAST */
+/* ===============================
+   NAVBAR (FIXED BOTH THEMES)
+   =============================== */
+
 .navbar {
   position: sticky;
   top: 0;
-  background: rgba(13, 17, 23, 0.95); /* solid dark */
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #2a2f36;
-  z-index: 10;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
 }
-/* Navbar text visibility */
-.navbar .logo {
-  color: #e6edf3;
-  font-weight: 600;
-}
-
-.nav-links a {
-  color: #c9d1d9; /* visible gray */
-  font-weight: 500;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: #ffffff;
-}
-
 
 .nav-inner {
   max-width: 1100px;
   margin: auto;
   padding: 14px 24px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
 }
 
 .nav-links a {
   margin: 0 10px;
   color: var(--muted);
   text-decoration: none;
+  font-weight: 500;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--text);
 }
 
-/* Navbar buttons – visible in dark theme */
 .nav-actions button {
+  margin-left: 8px;
   padding: 6px 12px;
   border-radius: 6px;
-  background: #161b22;        /* visible dark */
-  color: #e6edf3;             /* light text */
-  border: 1px solid #30363d;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
   cursor: pointer;
 }
 
 .nav-actions button:hover {
-  background: #21262d;
+  opacity: 0.9;
 }
 
+/* ===============================
+   HERO
+   =============================== */
 
-/* HERO */
 .hero {
   min-height: 80vh;
-  text-align: center;
   padding: 120px 24px 80px;
+  text-align: center;
 }
 
 .hero h1 {
@@ -100,24 +111,38 @@ body {
 }
 
 .hero-actions a {
+  display: inline-block;
   margin: 6px;
   padding: 10px 16px;
-  border: 1px solid #333;
-  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid var(--border);
   color: var(--text);
+  text-decoration: none;
 }
 
-.hero-actions .primary {
+.hero-actions a.primary {
   background: var(--accent);
+  color: #ffffff;
   border: none;
 }
 
-/* SECTIONS */
+/* ===============================
+   SECTIONS
+   =============================== */
+
 .section {
   max-width: 760px;
   margin: auto;
   padding: 100px 24px;
 }
+
+.section h2 {
+  margin-bottom: 24px;
+}
+
+/* ===============================
+   SKILLS GRID
+   =============================== */
 
 .grid {
   display: grid;
@@ -128,9 +153,13 @@ body {
 .grid span {
   background: var(--card);
   padding: 10px;
-  text-align: center;
   border-radius: 8px;
+  text-align: center;
 }
+
+/* ===============================
+   PROJECT CARDS
+   =============================== */
 
 .cards {
   display: grid;
@@ -143,7 +172,10 @@ body {
   border-radius: 12px;
 }
 
-/* REVEAL */
+/* ===============================
+   REVEAL ANIMATION
+   =============================== */
+
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -155,22 +187,23 @@ body {
   transform: none;
 }
 
-/* FOOTER */
+/* ===============================
+   FOOTER
+   =============================== */
+
 .footer {
   text-align: center;
-  padding: 60px;
+  padding: 60px 24px;
   color: var(--muted);
 }
 
-/* Active nav link */
-.nav-links a.active {
-  color: var(--text);
-  border-bottom: 2px solid var(--accent);
-}
+/* ===============================
+   PRINT MODE (CLEAN)
+   =============================== */
 
-/* Print cleanup */
 @media print {
   .navbar,
+  .hero-actions,
   .nav-actions {
     display: none;
   }
@@ -179,24 +212,8 @@ body {
     background: white;
     color: black;
   }
-}
 
-/* Light theme navbar override */
-body.light .navbar {
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid #e5e7eb;
-}
-
-body.light .navbar .logo {
-  color: #111827;
-}
-
-body.light .nav-links a {
-  color: #374151;
-}
-
-body.light .nav-actions button {
-  background: #f3f4f6;
-  color: #111827;
-  border: 1px solid #d1d5db;
+  .section {
+    padding: 40px 0;
+  }
 }
