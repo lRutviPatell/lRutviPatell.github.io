@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Rutvi Patel | Health Informatics Portfolio</title>
-  <meta name="description" content="Health Informatics graduate student with Pharm D background specializing in healthcare analytics and EHR systems." />
+  <meta name="description" content="Health Informatics graduate student with Pharm D background focused on healthcare analytics, EHR systems, and clinical informatics." />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -15,7 +15,7 @@
   <!-- Scroll Progress -->
   <div id="progress-bar"></div>
 
-  <!-- Mouse Glow -->
+  <!-- Cursor Glow -->
   <div id="cursor-glow"></div>
 
   <!-- Background -->
@@ -30,83 +30,118 @@
   <div id="toggle" class="toggle">Theme</div>
   <button onclick="window.print()" class="print-btn">Print Resume</button>
 
+  <!-- NAV -->
+  <nav class="top-nav">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#certifications">Certifications</a>
+  </nav>
+
   <!-- HERO -->
   <header class="container hero">
-    <h1 class="hero-title">Rutvi Jagdishkumar Patel</h1>
-    <p class="subtitle">Health Informatics · Pharm D · Healthcare Analytics</p>
+    <h1>Rutvi Jagdishkumar Patel</h1>
+    <p class="subtitle">
+      Health Informatics Graduate Student · Pharm D · Healthcare Analytics
+    </p>
 
-    <nav class="links">
+    <div class="links">
       <a href="mailto:rutvipat0799@gmail.com">Email</a>
       <a href="https://linkedin.com/in/rutvipatel0799" target="_blank">LinkedIn</a>
       <a href="https://github.com/lRutviPatell" target="_blank">GitHub</a>
       <a href="Rutvi_Patel_Resume.pdf" download class="resume-link">Download Resume</a>
-    </nav>
+    </div>
   </header>
 
   <!-- ABOUT -->
-  <section class="container reveal">
-    <h2 class="section-title">About</h2>
+  <section id="about" class="container reveal">
+    <h2 class="section-title">Professional Summary</h2>
     <p>
-      Graduate student in Health Informatics with a Doctor of Pharmacy background,
-      focused on healthcare analytics, EHR optimization, and AI-driven clinical insights.
+      Graduate student in Health Informatics with a Doctor of Pharmacy background and hands-on
+      experience in clinical settings. Strong interest in healthcare data analytics, EHR systems,
+      clinical decision support, and leveraging technology to improve patient safety and outcomes.
     </p>
   </section>
 
   <!-- SKILLS -->
-  <section class="container reveal">
+  <section id="skills" class="container reveal">
     <h2 class="section-title">Skills</h2>
 
-    <div class="skill">
-      <span>Python</span>
-      <div class="bar"><div data-level="85"></div></div>
-    </div>
+    <h3>Technical</h3>
+    <div class="skill"><span>Python</span><div class="bar"><div data-level="85"></div></div></div>
+    <div class="skill"><span>SQL</span><div class="bar"><div data-level="80"></div></div></div>
+    <div class="skill"><span>Tableau / Power BI</span><div class="bar"><div data-level="75"></div></div></div>
 
-    <div class="skill">
-      <span>SQL</span>
-      <div class="bar"><div data-level="80"></div></div>
-    </div>
-
-    <div class="skill">
-      <span>Tableau / Power BI</span>
-      <div class="bar"><div data-level="75"></div></div>
-    </div>
-
-    <div class="skill">
-      <span>EHR Systems</span>
-      <div class="bar"><div data-level="85"></div></div>
-    </div>
+    <h3>Healthcare Informatics</h3>
+    <p>
+      EHR Systems · ICD-10-CM · Clinical Data Management · Pharmacovigilance ·
+      Medication Safety · Health Data Standards
+    </p>
   </section>
 
   <!-- PROJECTS -->
-  <section class="container reveal">
+  <section id="projects" class="container reveal">
     <h2 class="section-title">Projects</h2>
 
     <div class="cards">
       <div class="card">
         <h3>EHR Impact on Healthcare Quality</h3>
-        <p class="muted">Analysis of EHR adoption improving safety and workflow efficiency.</p>
+        <p class="muted">
+          Academic case study evaluating how electronic health records improve workflow efficiency,
+          patient safety, and data accessibility across healthcare systems.
+        </p>
       </div>
 
       <div class="card">
-        <h3>AI-Powered Healthcare Analytics</h3>
-        <p class="muted">Predictive analytics platform for clinical decision support.</p>
+        <h3>AI-Powered Healthcare Analytics Platform</h3>
+        <p class="muted">
+          Designed a conceptual analytics solution using AI models to support predictive insights
+          and clinical decision-making.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Smart Gait Tracking System</h3>
+        <p class="muted">
+          IoT-based rehabilitation monitoring system to track patient movement and recovery
+          using real-time sensor data.
+        </p>
       </div>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
-  <section class="container reveal">
+  <section id="experience" class="container reveal">
     <h2 class="section-title">Experience</h2>
 
-    <p><strong>Pharm D Intern — GCS Medical College</strong></p>
-    <p class="muted">EHR documentation, ADR reporting, clinical drug support.</p>
+    <p><strong>Pharm D Intern — GCS Medical College & Research Centre</strong></p>
+    <p class="muted">
+      Maintained EHR documentation, reported adverse drug reactions, supported clinicians
+      with drug information, and assisted in patient safety initiatives.
+    </p>
 
     <p class="mt"><strong>Pharm D Intern — Zydus Hospitals</strong></p>
-    <p class="muted">Prescription audits, counseling, guideline training.</p>
+    <p class="muted">
+      Conducted prescription audits, provided medication counseling, and assisted with
+      clinical guideline implementation.
+    </p>
   </section>
 
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="container reveal">
+    <h2 class="section-title">Certifications & Coursework</h2>
+    <ul>
+      <li>HIPAA Compliance Training</li>
+      <li>ICD-10-CM Medical Coding</li>
+      <li>SQL for Healthcare (In Progress)</li>
+      <li>Healthcare Data Analytics & Visualization</li>
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="footer reveal">
-    © 2025 Rutvi Patel · Chicago, IL
+    © 2025 Rutvi Patel · Chicago, IL · Open to Healthcare Analytics & Informatics Roles
   </footer>
 
   <script src="script.js"></script>
