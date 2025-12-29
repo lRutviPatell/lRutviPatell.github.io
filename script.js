@@ -1,38 +1,20 @@
-/* Progress bar */
-window.addEventListener("scroll", () => {
-  const h = document.documentElement;
-  document.getElementById("progress-bar").style.width =
-    (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 + "%";
-});
-
-/* Reveal + skill animation */
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add("show");
-
-      e.target.querySelectorAll(".bar div").forEach(bar => {
-        bar.style.width = bar.dataset.level + "%";
-      });
-    }
-  });
-}, { threshold: 0.2 });
+/* Reveal animation */
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add("show");
+    });
+  },
+  { threshold: 0.2 }
+);
 
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-/* Dark mode */
+/* Theme toggle */
 const toggle = document.getElementById("toggle");
-if (localStorage.theme === "dark") document.body.classList.add("dark");
-toggle.onclick = () => {
-  document.body.classList.toggle("dark");
-  localStorage.theme = document.body.classList.contains("dark") ? "dark" : "light";
-};
 
-/* Cursor glow */
-const glow = document.getElementById("cursor-glow");
-document.addEventListener("mousemove", e => {
-  glow.style.left = e.clientX + "px";
-  glow.style.top = e.clientY + "px";
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("light");
 });
 
 /* Particles */
