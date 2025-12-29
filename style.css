@@ -1,18 +1,18 @@
 @import url("https://rsms.me/inter/inter.css");
 
 :root {
-  --bg: #ffffff;
-  --text: #0f172a;
-  --muted: #475569;
-  --border: #e5e7eb;
-  --accent: #2563eb;
-}
-
-body.dark {
   --bg: #0b0f19;
   --text: #e5e7eb;
   --muted: #9ca3af;
   --border: #1f2933;
+  --accent: #2563eb;
+}
+
+body.light {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --border: #e5e7eb;
 }
 
 body {
@@ -23,114 +23,163 @@ body {
   line-height: 1.7;
 }
 
-/* Progress bar */
-#progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: var(--accent);
-  width: 0%;
-  z-index: 20;
-}
-
-/* Cursor glow */
-#cursor-glow {
-  position: fixed;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  pointer-events: none;
-  background: radial-gradient(circle, rgba(37,99,235,0.15), transparent 70%);
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}
-
-/* Nav */
-.top-nav {
+/* NAVBAR */
+.topbar {
   position: sticky;
   top: 0;
+  background: rgba(10, 15, 30, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  z-index: 50;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
   display: flex;
   gap: 20px;
-  justify-content: center;
-  background: var(--bg);
-  padding: 12px;
-  border-bottom: 1px solid var(--border);
-  z-index: 15;
 }
 
-/* Layout */
-.container {
-  max-width: 760px;
-  margin: auto;
-  padding: 96px 24px;
-}
-
-.hero { padding-top: 120px; }
-
-h1 { font-size: 2.6rem; }
-.subtitle { color: var(--muted); }
-
-/* Sections */
-.section-title::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 3px;
-  background: var(--accent);
-  transition: width 0.6s;
-}
-
-.reveal.show .section-title::after {
-  width: 60px;
-}
-
-/* Skills */
-.skill { margin-bottom: 16px; }
-.bar {
-  background: var(--border);
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px 10px;
   border-radius: 6px;
 }
-.bar div {
-  height: 8px;
-  background: var(--accent);
-  width: 0;
-  transition: width 1.2s ease;
+
+.nav-links a:hover {
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
 }
 
-/* Cards */
-.cards { display: grid; gap: 24px; }
+/* BUTTONS */
+.btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background: var(--accent);
+  border: none;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* HERO */
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 720px;
+  padding: 40px 24px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* SECTIONS */
+.section {
+  max-width: 760px;
+  margin: auto;
+  padding: 100px 24px;
+}
+
+.section h2 {
+  margin-bottom: 24px;
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.skills-grid li {
+  list-style: none;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  gap: 24px;
+}
+
 .card {
   border: 1px solid var(--border);
   padding: 24px;
   border-radius: 14px;
 }
 
-/* Buttons */
-.toggle, .print-btn {
-  position: fixed;
-  right: 20px;
-  padding: 6px 10px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  cursor: pointer;
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 60px 24px;
+  color: var(--muted);
 }
-.toggle { top: 20px; }
-.print-btn { top: 60px; }
 
-/* Reveal */
+/* REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: 0.8s ease;
 }
+
 .reveal.show {
   opacity: 1;
   transform: none;
 }
 
-/* Background blobs */
-.bg-effects { position: fixed; inset: 0; z-index: -2; }
+/* BACKGROUND */
+.bg-effects {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
 .blob {
   position: absolute;
   width: 400px;
@@ -139,6 +188,7 @@ h1 { font-size: 2.6rem; }
   filter: blur(80px);
   animation: float 20s infinite alternate;
 }
+
 .blob-1 { top: -120px; left: -120px; }
 .blob-2 { bottom: -120px; right: -120px; }
 .blob-3 { top: 30%; right: -150px; }
