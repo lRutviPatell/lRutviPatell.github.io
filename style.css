@@ -168,3 +168,23 @@ body {
   padding: 80px 24px;
   color: var(--muted);
 }
+
+/* ===============================
+   THEME-AWARE BACKGROUND
+   =============================== */
+
+.bg-effects {
+  background: radial-gradient(circle at top, #0f172a, #020617);
+}
+
+/* Light theme background */
+body.light .bg-effects {
+  background: radial-gradient(circle at top, #eef2ff, #ffffff);
+}
+
+/* Ensure hero text always visible */
+.hero,
+.hero h1,
+.hero .subtitle {
+  opacity: 1 !important;
+}
