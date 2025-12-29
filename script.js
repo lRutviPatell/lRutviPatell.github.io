@@ -1,45 +1,109 @@
-/* Reveal animation */
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) e.target.classList.add("show");
+/* ===============================
+   SCROLL REVEAL ANIMATION
+   =============================== */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
     });
   },
-  { threshold: 0.2 }
+  { threshold: 0.15 }
 );
 
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+revealElements.forEach((el) => revealObserver.observe(el));
 
-/* Theme toggle */
-const toggle = document.getElementById("toggle");
 
-toggle.addEventListener("click", () => {
+/* ===============================
+   ACTIVE NAV LINK ON SCROLL
+   =============================== */
+
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+function setActiveNav() {
+  let current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 120;
+    const sectionHeight = section.offsetHeight;
+
+    if (
+      window.scrollY >= sectionTop &&
+      window.scrollY < sectionTop + sectionHeight
+    ) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", setActiveNav);
+
+
+/* ===============================
+   THEME TOGGLE (PERSISTENT)
+   =============================== */
+
+const themeToggle = document.getElementById("themeToggle");
+
+// Load saved theme
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("light");
+}
+
+// Toggle theme
+themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("light");
+
+  if (document.body.classList.contains("light")) {
+    localStorage.setItem("theme", "light");
+  } else {
+    localStorage.setItem("theme", "dark");
+  }
 });
 
-/* Particles */
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-canvas.width = innerWidth;
-canvas.height = innerHeight;
 
-let particles = Array.from({ length: 40 }, () => ({
-  x: Math.random() * canvas.width,
-  y: Math.random() * canvas.height,
-  r: Math.random() * 1.5 + 0.5,
-  v: Math.random() * 0.3 + 0.1
-}));
+/* ===============================
+   SUBTLE BACKGROUND GLOW (MOUSE)
+   =============================== */
 
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => {
-    p.y -= p.v;
-    if (p.y < 0) p.y = canvas.height;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(37,99,235,0.25)";
-    ctx.fill();
-  });
-  requestAnimationFrame(animate);
-}
-animate();
+const glow = document.createElement("div");
+glow.style.position = "fixed";
+glow.style.width = "260px";
+glow.style.height = "260px";
+glow.style.borderRadius = "50%";
+glow.style.pointerEvents = "none";
+glow.style.background =
+  "radial-gradient(circle, rgba(59,130,246,0.15), transparent 70%)";
+glow.style.zIndex = "-1";
+glow.style.transform = "translate(-50%, -50%)";
+document.body.appendChild(glow);
+
+document.addEventListener("mousemove", (e) => {
+  glow.style.left = `${e.clientX}px`;
+  glow.style.top = `${e.clientY}px`;
+});
+
+
+/* ===============================
+   SAFE PRINT HANDLING
+   =============================== */
+
+window.addEventListener("beforeprint", () => {
+  document.body.classList.add("print");
+});
+
+window.addEventListener("afterprint", () => {
+  document.body.classList.remove("print");
+});
