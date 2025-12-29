@@ -22,15 +22,31 @@ body {
   color: var(--text);
 }
 
-/* NAVBAR */
+/* NAVBAR – FIXED CONTRAST */
 .navbar {
   position: sticky;
   top: 0;
-  background: rgba(13,17,23,0.9);
+  background: rgba(13, 17, 23, 0.95); /* solid dark */
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #2a2f36;
   z-index: 10;
 }
+/* Navbar text visibility */
+.navbar .logo {
+  color: #e6edf3;
+  font-weight: 600;
+}
+
+.nav-links a {
+  color: #c9d1d9; /* visible gray */
+  font-weight: 500;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+}
+
 
 .nav-inner {
   max-width: 1100px;
@@ -51,14 +67,20 @@ body {
   color: var(--text);
 }
 
+/* Navbar buttons – visible in dark theme */
 .nav-actions button {
-  margin-left: 8px;
-  padding: 6px 10px;
-  background: transparent;
-  color: var(--text);
-  border: 1px solid #333;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #161b22;        /* visible dark */
+  color: #e6edf3;             /* light text */
+  border: 1px solid #30363d;
   cursor: pointer;
 }
+
+.nav-actions button:hover {
+  background: #21262d;
+}
+
 
 /* HERO */
 .hero {
@@ -157,4 +179,24 @@ body {
     background: white;
     color: black;
   }
+}
+
+/* Light theme navbar override */
+body.light .navbar {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+body.light .navbar .logo {
+  color: #111827;
+}
+
+body.light .nav-links a {
+  color: #374151;
+}
+
+body.light .nav-actions button {
+  background: #f3f4f6;
+  color: #111827;
+  border: 1px solid #d1d5db;
 }
