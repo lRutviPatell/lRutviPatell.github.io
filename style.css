@@ -17,10 +17,33 @@ body.dark {
 
 body {
   margin: 0;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: Inter, system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
+}
+
+/* Scroll Progress */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--accent);
+  width: 0%;
+  z-index: 20;
+}
+
+/* Mouse glow */
+#cursor-glow {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(37,99,235,0.15), transparent 70%);
+  transform: translate(-50%, -50%);
+  z-index: -1;
 }
 
 /* Layout */
@@ -30,160 +53,93 @@ body {
   padding: 96px 24px;
 }
 
-.hero {
-  padding-top: 140px;
-  padding-bottom: 120px;
-}
+.hero { padding-top: 140px; }
 
-h1 {
-  font-size: 2.6rem;
-  margin-bottom: 12px;
-}
-
-.subtitle {
-  font-size: 1.05rem;
-  color: var(--muted);
-}
-
-h2 {
-  font-size: 1.4rem;
-  margin-bottom: 24px;
-}
+h1 { font-size: 2.6rem; }
+.subtitle { color: var(--muted); }
 
 .section-title {
   position: relative;
-  display: inline-block;
 }
 
 .section-title::after {
   content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
+  display: block;
   width: 0;
   height: 3px;
   background: var(--accent);
-  transition: width 0.6s ease;
+  transition: width 0.6s;
 }
 
-.section.reveal.show .section-title::after {
-  width: 100%;
+.reveal.show .section-title::after {
+  width: 60px;
 }
 
-.links {
-  margin-top: 32px;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+/* Skills */
+.skill { margin-bottom: 20px; }
+.bar {
+  background: var(--border);
+  border-radius: 6px;
+  overflow: hidden;
 }
-
-a {
-  color: var(--accent);
-  text-decoration: none;
-  position: relative;
-}
-
-a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
+.bar div {
+  height: 8px;
   width: 0;
-  height: 2px;
-  background: currentColor;
-  transition: width 0.3s ease;
+  background: var(--accent);
+  transition: width 1.2s ease;
 }
 
-a:hover::after {
-  width: 100%;
-}
-
-.resume-link {
-  border-bottom: 2px solid var(--accent);
-}
-
-.cards {
-  display: grid;
-  gap: 24px;
-}
-
+/* Cards */
+.cards { display: grid; gap: 24px; }
 .card {
   border: 1px solid var(--border);
   padding: 24px;
   border-radius: 14px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(37,99,235,0.12);
 }
 
-.muted {
-  color: var(--muted);
-}
-
-.mt {
-  margin-top: 24px;
-}
-
-.footer {
-  padding: 80px 24px;
-  max-width: 760px;
-  margin: auto;
-  color: var(--muted);
-}
-
-/* Dark mode toggle */
-.toggle {
+/* Buttons */
+.toggle, .print-btn {
   position: fixed;
-  top: 20px;
   right: 20px;
-  font-size: 14px;
+  padding: 6px 10px;
   cursor: pointer;
   z-index: 10;
-  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
 }
+.toggle { top: 20px; }
+.print-btn { top: 60px; }
 
-/* Reveal animation */
+/* Reveal */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: 0.8s ease;
 }
-
 .reveal.show {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
-/* Background effects */
-.bg-effects {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
-}
-
+/* Background blobs */
+.bg-effects { position: fixed; inset: 0; z-index: -2; }
 .blob {
   position: absolute;
-  width: 420px;
-  height: 420px;
+  width: 400px;
+  height: 400px;
   background: radial-gradient(circle, rgba(37,99,235,0.25), transparent 70%);
   filter: blur(80px);
-  animation: float 20s infinite alternate ease-in-out;
+  animation: float 20s infinite alternate;
 }
-
 .blob-1 { top: -120px; left: -120px; }
-.blob-2 { bottom: -150px; right: -120px; animation-duration: 24s; }
-.blob-3 { top: 30%; right: -150px; animation-duration: 28s; }
+.blob-2 { bottom: -120px; right: -120px; }
+.blob-3 { top: 30%; right: -150px; }
 
 @keyframes float {
   to { transform: translate(80px, 60px); }
-}
-
-#particles {
-  position: absolute;
-  inset: 0;
-  opacity: 0.25;
 }
