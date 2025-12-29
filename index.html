@@ -5,20 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Rutvi Patel | Health Informatics Portfolio</title>
-  <meta name="description" content="Health Informatics graduate student with Pharm D background focused on healthcare analytics, EHR systems, and clinical informatics." />
+  <meta name="description" content="Health Informatics graduate student with Pharm D background focused on healthcare analytics and EHR systems." />
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- Scroll Progress -->
-  <div id="progress-bar"></div>
-
-  <!-- Cursor Glow -->
-  <div id="cursor-glow"></div>
-
-  <!-- Background -->
+  <!-- BACKGROUND -->
   <div class="bg-effects">
     <span class="blob blob-1"></span>
     <span class="blob blob-2"></span>
@@ -26,122 +20,133 @@
     <canvas id="particles"></canvas>
   </div>
 
-  <!-- Controls -->
-  <div id="toggle" class="toggle">Theme</div>
-  <button onclick="window.print()" class="print-btn">Print Resume</button>
+  <!-- TOP NAVBAR -->
+  <header class="topbar">
+    <div class="nav-container">
+      <div class="brand">Rutvi Patel</div>
 
-  <!-- NAV -->
-  <nav class="top-nav">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#certifications">Certifications</a>
-  </nav>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#certifications">Certifications</a>
+      </nav>
 
-  <!-- HERO -->
-  <header class="container hero">
-    <h1>Rutvi Jagdishkumar Patel</h1>
-    <p class="subtitle">
-      Health Informatics Graduate Student · Pharm D · Healthcare Analytics
-    </p>
-
-    <div class="links">
-      <a href="mailto:rutvipat0799@gmail.com">Email</a>
-      <a href="https://linkedin.com/in/rutvipatel0799" target="_blank">LinkedIn</a>
-      <a href="https://github.com/lRutviPatell" target="_blank">GitHub</a>
-      <a href="Rutvi_Patel_Resume.pdf" download class="resume-link">Download Resume</a>
+      <div class="nav-actions">
+        <button id="toggle" class="btn ghost">Theme</button>
+        <button onclick="window.print()" class="btn ghost">Print</button>
+      </div>
     </div>
   </header>
 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Rutvi Jagdishkumar Patel</h1>
+      <p class="hero-subtitle">
+        Health Informatics Graduate Student · Pharm D · Healthcare Analytics
+      </p>
+
+      <div class="hero-buttons">
+        <a href="mailto:rutvipat0799@gmail.com" class="btn">Email</a>
+        <a href="https://linkedin.com/in/rutvipatel0799" target="_blank" class="btn">LinkedIn</a>
+        <a href="https://github.com/lRutviPatell" target="_blank" class="btn">GitHub</a>
+        <a href="Rutvi_Patel_Resume.pdf" download class="btn primary">
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ABOUT -->
-  <section id="about" class="container reveal">
-    <h2 class="section-title">Professional Summary</h2>
+  <section id="about" class="section reveal">
+    <h2>Professional Summary</h2>
     <p>
-      Graduate student in Health Informatics with a Doctor of Pharmacy background and hands-on
-      experience in clinical settings. Strong interest in healthcare data analytics, EHR systems,
-      clinical decision support, and leveraging technology to improve patient safety and outcomes.
+      Graduate student in Health Informatics with a Doctor of Pharmacy background and
+      hands-on clinical experience. Passionate about healthcare data analytics,
+      EHR optimization, and improving patient outcomes through technology.
     </p>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="container reveal">
-    <h2 class="section-title">Skills</h2>
+  <section id="skills" class="section reveal">
+    <h2>Skills</h2>
 
-    <h3>Technical</h3>
-    <div class="skill"><span>Python</span><div class="bar"><div data-level="85"></div></div></div>
-    <div class="skill"><span>SQL</span><div class="bar"><div data-level="80"></div></div></div>
-    <div class="skill"><span>Tableau / Power BI</span><div class="bar"><div data-level="75"></div></div></div>
-
-    <h3>Healthcare Informatics</h3>
-    <p>
-      EHR Systems · ICD-10-CM · Clinical Data Management · Pharmacovigilance ·
-      Medication Safety · Health Data Standards
-    </p>
+    <ul class="skills-grid">
+      <li>Python</li>
+      <li>SQL</li>
+      <li>Tableau</li>
+      <li>Power BI</li>
+      <li>EHR Systems</li>
+      <li>ICD-10-CM</li>
+      <li>Clinical Data Management</li>
+      <li>Pharmacovigilance</li>
+    </ul>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="container reveal">
-    <h2 class="section-title">Projects</h2>
+  <section id="projects" class="section reveal">
+    <h2>Projects</h2>
 
     <div class="cards">
       <div class="card">
         <h3>EHR Impact on Healthcare Quality</h3>
-        <p class="muted">
-          Academic case study evaluating how electronic health records improve workflow efficiency,
-          patient safety, and data accessibility across healthcare systems.
+        <p>
+          Evaluated how electronic health record adoption improves workflow efficiency,
+          patient safety, and data accessibility in healthcare settings.
         </p>
       </div>
 
       <div class="card">
-        <h3>AI-Powered Healthcare Analytics Platform</h3>
-        <p class="muted">
-          Designed a conceptual analytics solution using AI models to support predictive insights
-          and clinical decision-making.
+        <h3>AI-Powered Healthcare Analytics</h3>
+        <p>
+          Designed a conceptual analytics platform using AI models to support predictive
+          insights and clinical decision-making.
         </p>
       </div>
 
       <div class="card">
         <h3>Smart Gait Tracking System</h3>
-        <p class="muted">
-          IoT-based rehabilitation monitoring system to track patient movement and recovery
-          using real-time sensor data.
+        <p>
+          IoT-based rehabilitation monitoring system using real-time gait analysis
+          for patient recovery tracking.
         </p>
       </div>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
-  <section id="experience" class="container reveal">
-    <h2 class="section-title">Experience</h2>
+  <section id="experience" class="section reveal">
+    <h2>Experience</h2>
 
     <p><strong>Pharm D Intern — GCS Medical College & Research Centre</strong></p>
-    <p class="muted">
-      Maintained EHR documentation, reported adverse drug reactions, supported clinicians
-      with drug information, and assisted in patient safety initiatives.
+    <p>
+      Maintained EHR documentation, reported adverse drug reactions,
+      and supported clinicians with drug information.
     </p>
 
     <p class="mt"><strong>Pharm D Intern — Zydus Hospitals</strong></p>
-    <p class="muted">
-      Conducted prescription audits, provided medication counseling, and assisted with
-      clinical guideline implementation.
+    <p>
+      Conducted prescription audits, provided medication counseling,
+      and assisted in clinical guideline implementation.
     </p>
   </section>
 
   <!-- CERTIFICATIONS -->
-  <section id="certifications" class="container reveal">
-    <h2 class="section-title">Certifications & Coursework</h2>
+  <section id="certifications" class="section reveal">
+    <h2>Certifications & Coursework</h2>
     <ul>
       <li>HIPAA Compliance Training</li>
       <li>ICD-10-CM Medical Coding</li>
+      <li>Healthcare Data Analytics</li>
       <li>SQL for Healthcare (In Progress)</li>
-      <li>Healthcare Data Analytics & Visualization</li>
     </ul>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer reveal">
-    © 2025 Rutvi Patel · Chicago, IL · Open to Healthcare Analytics & Informatics Roles
+  <footer class="footer">
+    © 2025 Rutvi Patel · Chicago, IL
   </footer>
 
   <script src="script.js"></script>
