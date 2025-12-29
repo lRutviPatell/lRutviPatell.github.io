@@ -4,18 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
   <title>Rutvi Patel | Health Informatics Portfolio</title>
-  <meta name="description" content="Health Informatics graduate student with Pharm D background specializing in healthcare analytics, EHR systems, and AI in healthcare." />
-  <meta name="keywords" content="Health Informatics, Healthcare Analytics, EHR, PharmD, Clinical Informatics, SQL, Python" />
-  <meta name="author" content="Rutvi Jagdishkumar Patel" />
+  <meta name="description" content="Health Informatics graduate student with Pharm D background specializing in healthcare analytics and EHR systems." />
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- BACKGROUND EFFECTS -->
+  <!-- Scroll Progress -->
+  <div id="progress-bar"></div>
+
+  <!-- Mouse Glow -->
+  <div id="cursor-glow"></div>
+
+  <!-- Background -->
   <div class="bg-effects">
     <span class="blob blob-1"></span>
     <span class="blob blob-2"></span>
@@ -23,91 +26,87 @@
     <canvas id="particles"></canvas>
   </div>
 
-  <!-- DARK MODE TOGGLE -->
+  <!-- Controls -->
   <div id="toggle" class="toggle">Theme</div>
+  <button onclick="window.print()" class="print-btn">Print Resume</button>
 
   <!-- HERO -->
   <header class="container hero">
     <h1 class="hero-title">Rutvi Jagdishkumar Patel</h1>
-    <p class="subtitle hero-sub">
-      Graduate Student in Health Informatics · Pharm D · Healthcare Analytics
-    </p>
+    <p class="subtitle">Health Informatics · Pharm D · Healthcare Analytics</p>
 
-    <nav class="links hero-links">
+    <nav class="links">
       <a href="mailto:rutvipat0799@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/rutvipatel0799" target="_blank">LinkedIn</a>
+      <a href="https://linkedin.com/in/rutvipatel0799" target="_blank">LinkedIn</a>
       <a href="https://github.com/lRutviPatell" target="_blank">GitHub</a>
       <a href="Rutvi_Patel_Resume.pdf" download class="resume-link">Download Resume</a>
     </nav>
   </header>
 
   <!-- ABOUT -->
-  <section class="container section reveal">
+  <section class="container reveal">
     <h2 class="section-title">About</h2>
     <p>
-      Graduate student in Health Informatics with a Doctor of Pharmacy background.
-      Interested in healthcare analytics, EHR optimization, clinical data management,
-      and AI-driven clinical decision support to improve patient outcomes.
+      Graduate student in Health Informatics with a Doctor of Pharmacy background,
+      focused on healthcare analytics, EHR optimization, and AI-driven clinical insights.
     </p>
-  </section>
-
-  <!-- EDUCATION -->
-  <section class="container section reveal">
-    <h2 class="section-title">Education</h2>
-    <p><strong>M.S. Health Informatics</strong> — DePaul University (2024–2026)</p>
-    <p><strong>Doctor of Pharmacy (Pharm D)</strong> — L.M. College of Pharmacy (2017–2023)</p>
   </section>
 
   <!-- SKILLS -->
-  <section class="container section reveal">
+  <section class="container reveal">
     <h2 class="section-title">Skills</h2>
-    <p>
-      Python · SQL · Tableau · Power BI · EHR Systems · ICD-10-CM ·
-      Clinical Data Management · Pharmacovigilance
-    </p>
+
+    <div class="skill">
+      <span>Python</span>
+      <div class="bar"><div data-level="85"></div></div>
+    </div>
+
+    <div class="skill">
+      <span>SQL</span>
+      <div class="bar"><div data-level="80"></div></div>
+    </div>
+
+    <div class="skill">
+      <span>Tableau / Power BI</span>
+      <div class="bar"><div data-level="75"></div></div>
+    </div>
+
+    <div class="skill">
+      <span>EHR Systems</span>
+      <div class="bar"><div data-level="85"></div></div>
+    </div>
   </section>
 
   <!-- PROJECTS -->
-  <section class="container section reveal">
+  <section class="container reveal">
     <h2 class="section-title">Projects</h2>
 
     <div class="cards">
       <div class="card">
         <h3>EHR Impact on Healthcare Quality</h3>
-        <p class="muted">Analyzed how EHR adoption improves patient safety and workflow efficiency.</p>
+        <p class="muted">Analysis of EHR adoption improving safety and workflow efficiency.</p>
       </div>
 
       <div class="card">
         <h3>AI-Powered Healthcare Analytics</h3>
-        <p class="muted">Conceptual predictive analytics platform for clinical decision support.</p>
-      </div>
-
-      <div class="card">
-        <h3>Smart Gait Tracking System</h3>
-        <p class="muted">IoT-based real-time rehabilitation monitoring solution.</p>
-      </div>
-
-      <div class="card">
-        <h3>Pharmacogenomics Research</h3>
-        <p class="muted">Study of CYP2C9 & CYP2C19 polymorphisms affecting drug response.</p>
+        <p class="muted">Predictive analytics platform for clinical decision support.</p>
       </div>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
-  <section class="container section reveal">
+  <section class="container reveal">
     <h2 class="section-title">Experience</h2>
 
-    <p><strong>Pharm D Intern — GCS Medical College & Research Centre</strong></p>
-    <p class="muted">EHR documentation, ADR reporting, and clinical drug information support.</p>
+    <p><strong>Pharm D Intern — GCS Medical College</strong></p>
+    <p class="muted">EHR documentation, ADR reporting, clinical drug support.</p>
 
     <p class="mt"><strong>Pharm D Intern — Zydus Hospitals</strong></p>
-    <p class="muted">Prescription audits, medication counseling, and guideline training.</p>
+    <p class="muted">Prescription audits, counseling, guideline training.</p>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer reveal">
-    <p>© 2025 Rutvi Patel · Chicago, IL</p>
+    © 2025 Rutvi Patel · Chicago, IL
   </footer>
 
   <script src="script.js"></script>
