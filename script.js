@@ -111,9 +111,9 @@ function animateParticles() {
     
     // Check theme for color
     if (body.classList.contains("light")) {
-        ctx.fillStyle = "rgba(37, 99, 235, 0.2)"; // Blue-600 low opacity
+        ctx.fillStyle = "rgba(13, 148, 136, 0.2)"; // Teal-600 low opacity
     } else {
-        ctx.fillStyle = "rgba(59, 130, 246, 0.4)"; // Blue-500 low opacity
+        ctx.fillStyle = "rgba(45, 212, 191, 0.4)"; // Teal-400 low opacity
     }
     
     ctx.fill();
