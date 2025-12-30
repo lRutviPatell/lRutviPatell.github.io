@@ -122,3 +122,80 @@ function animateParticles() {
   requestAnimationFrame(animateParticles);
 }
 animateParticles();
+
+/* ===============================
+   TYPING EFFECT
+   =============================== */
+const typingElement = document.getElementById("typing-text");
+if (typingElement) {
+  const textArray = ["Healthcare Analytics", "Clinical Data", "Patient Outcomes", "EHR Systems"];
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function type() {
+    const currentText = textArray[textIndex];
+    
+    if (isDeleting) {
+      typingElement.textContent = currentText.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      typingElement.textContent = currentText.substring(0, charIndex + 1);
+      charIndex++;
+    }
+
+    let typeSpeed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && charIndex === currentText.length) {
+      isDeleting = true;
+      typeSpeed = 2000; // Pause at end
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      textIndex = (textIndex + 1) % textArray.length;
+      typeSpeed = 500; // Pause before new word
+    }
+
+    setTimeout(type, typeSpeed);
+  }
+
+  type();
+}
+
+/* ===============================
+   SCROLL SPY & BACK TO TOP
+   =============================== */
+const backToTopBtn = document.getElementById("backToTop");
+const sections = document.querySelectorAll("section");
+const navLinksItems = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+  // Back to Top
+  if (window.scrollY > 300) {
+    if (backToTopBtn) backToTopBtn.classList.add("visible");
+  } else {
+    if (backToTopBtn) backToTopBtn.classList.remove("visible");
+  }
+
+  // Scroll Spy
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= sectionTop - 150) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinksItems.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
+});
+
+if (backToTopBtn) {
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
