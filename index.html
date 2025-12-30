@@ -3,8 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rutvi Patel | Health Informatics</title>
+  <title>Rutvi Patel | Health Informatics Portfolio</title>
   <meta name="description" content="Health Informatics Graduate Student | Pharm D | Healthcare Analytics" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -12,112 +21,241 @@
 
   <!-- BACKGROUND EFFECTS -->
   <div class="bg-effects">
-    <span class="blob blob-1"></span>
-    <span class="blob blob-2"></span>
-    <span class="blob blob-3"></span>
+    <div class="gradient-sphere sphere-1"></div>
+    <div class="gradient-sphere sphere-2"></div>
     <canvas id="particles"></canvas>
   </div>
 
   <!-- NAVBAR -->
   <header class="navbar">
-    <div class="nav-inner">
-      <div class="logo">Rutvi Patel</div>
+    <div class="nav-container">
+      <a href="#" class="logo">RP.</a>
 
       <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#certifications">Certifications</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
       </nav>
 
       <div class="nav-actions">
-        <button id="themeToggle" class="nav-btn">Toggle Theme</button>
-        <a href="Rutvi_Patel_Resume.pdf" download class="nav-btn">
-          📄 Resume
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="Rutvi_Patel_Resume.pdf" download class="btn btn-primary">
+          Resume <i class="fas fa-download"></i>
         </a>
       </div>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-toggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero reveal">
-    <h1>Rutvi Jagdishkumar Patel</h1>
-    <p class="subtitle">
-      Health Informatics Graduate Student · Pharm D · Healthcare Analytics
-    </p>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text reveal-left">
+          <span class="hero-greeting">Hello, I'm</span>
+          <h1>Rutvi Patel</h1>
+          <h2 class="subtitle">Health Informatics &<br> <span class="highlight">Healthcare Analytics</span></h2>
+          <p class="hero-desc">
+            Bridging the gap between clinical expertise and data-driven healthcare solutions. 
+            Pharm D background with a focus on EHR systems and Patient Outcomes.
+          </p>
+          
+          <div class="hero-btns">
+            <a href="#contact" class="btn btn-primary">Get in Touch</a>
+            <a href="#projects" class="btn btn-outline">View Work</a>
+          </div>
 
-    <div class="hero-actions">
-      <a href="mailto:rutvipat0799@gmail.com">Email</a>
-      <a href="https://linkedin.com/in/rutvipatel0799" target="_blank">LinkedIn</a>
-      <a href="https://github.com/lRutviPatell" target="_blank">GitHub</a>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="section reveal">
-    <h2>Professional Summary</h2>
-    <p>
-      Graduate student in Health Informatics with a Doctor of Pharmacy background and
-      hands-on clinical experience. Passionate about healthcare analytics, EHR systems,
-      and improving patient outcomes through data-driven solutions.
-    </p>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="section reveal">
-    <h2>Skills</h2>
-    <div class="grid">
-      <span>Python</span>
-      <span>SQL</span>
-      <span>Tableau</span>
-      <span>Power BI</span>
-      <span>EHR Systems</span>
-      <span>ICD-10-CM</span>
-      <span>Clinical Data</span>
-      <span>Pharmacovigilance</span>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section reveal">
-    <h2>Projects</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>EHR Impact on Healthcare Quality</h3>
-        <p>Evaluated how EHR adoption improves patient safety and workflow efficiency.</p>
+          <div class="social-links">
+            <a href="mailto:rutvipat0799@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/rutvipatel0799" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/lRutviPatell" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        
+        <div class="hero-visual reveal-right">
+          <!-- Placeholder for Profile Image or Abstract Graphic -->
+          <div class="profile-card">
+            <div class="profile-glow"></div>
+            <div class="profile-content">
+              <i class="fas fa-laptop-medical fa-4x"></i>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>AI-Powered Healthcare Analytics</h3>
-        <p>Conceptual analytics platform for predictive clinical insights.</p>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">About Me</span>
+          <h2>Professional Summary</h2>
+        </div>
+        
+        <div class="about-content reveal">
+          <p class="lead">
+            Graduate student in Health Informatics with a Doctor of Pharmacy background and hands-on clinical experience.
+          </p>
+          <p>
+            I am passionate about healthcare analytics, EHR systems, and improving patient outcomes through data-driven solutions. 
+            My unique blend of clinical knowledge and technical skills allows me to understand healthcare data from both perspectives.
+          </p>
+          
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-number">Pharm D</span>
+              <span class="stat-label">Background</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">HI</span>
+              <span class="stat-label">Health Informatics</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Years Exp.</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section reveal">
-    <h2>Experience</h2>
-    <p><strong>Pharm D Intern — GCS Medical College</strong></p>
-    <p>EHR documentation, ADR reporting, and clinical drug information support.</p>
+    <!-- SKILLS -->
+    <section id="skills" class="section alt-bg">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Expertise</span>
+          <h2>Technical Skills</h2>
+        </div>
 
-    <p class="mt"><strong>Pharm D Intern — Zydus Hospitals</strong></p>
-    <p>Prescription audits, counseling, and guideline implementation.</p>
-  </section>
+        <div class="skills-grid">
+          <!-- Tech Stack -->
+          <div class="skill-category reveal">
+            <h3><i class="fas fa-code"></i> Languages & Tools</h3>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Tableau</span>
+              <span class="tag">Power BI</span>
+            </div>
+          </div>
 
-  <!-- CERTIFICATIONS -->
-  <section id="certifications" class="section reveal">
-    <h2>Certifications</h2>
-    <ul>
-      <li>HIPAA Compliance</li>
-      <li>ICD-10-CM Medical Coding</li>
-      <li>SQL for Healthcare (In Progress)</li>
-    </ul>
-  </section>
+          <!-- Domain -->
+          <div class="skill-category reveal">
+            <h3><i class="fas fa-heartbeat"></i> Healthcare</h3>
+            <div class="tags">
+              <span class="tag">EHR Systems</span>
+              <span class="tag">ICD-10-CM</span>
+              <span class="tag">Clinical Data</span>
+              <span class="tag">Pharmacovigilance</span>
+              <span class="tag">HIPAA Compliance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <footer class="footer">
-    © 2025 Rutvi Patel · Chicago, IL
-  </footer>
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Portfolio</span>
+          <h2>Selected Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+          <a href="project-ehr.html" class="project-card reveal">
+            <div class="project-icon">
+              <i class="fas fa-notes-medical"></i>
+            </div>
+            <div class="project-info">
+              <h3>EHR Impact on Healthcare Quality</h3>
+              <p>Evaluated how EHR adoption improves patient safety and workflow efficiency using data analysis techniques.</p>
+              <div class="project-tags">
+                <span>Research</span>
+                <span>EHR</span>
+                <span>Analytics</span>
+              </div>
+            </div>
+          </a>
+
+          <div class="project-card reveal">
+            <div class="project-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div class="project-info">
+              <h3>AI-Powered Healthcare Analytics</h3>
+              <p>Conceptual analytics platform for predictive clinical insights to assist in early diagnosis.</p>
+              <div class="project-tags">
+                <span>AI</span>
+                <span>Python</span>
+                <span>Predictive Models</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Career Path</span>
+          <h2>Experience</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-date">Current</div>
+            <div class="timeline-content">
+              <h3>Graduate Student</h3>
+              <span class="company">Health Informatics</span>
+              <p>Focusing on healthcare data standards, interoperability, and analytics.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-date">Internship</div>
+            <div class="timeline-content">
+              <h3>Pharm D Intern</h3>
+              <span class="company">GCS Medical College</span>
+              <p>Managed EHR documentation, ADR reporting, and provided clinical drug information support.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-date">Internship</div>
+            <div class="timeline-content">
+              <h3>Pharm D Intern</h3>
+              <span class="company">Zydus Hospitals</span>
+              <p>Conducted prescription audits, patient counseling, and treatment guideline implementation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section footer-section">
+      <div class="container text-center reveal">
+        <h2>Let's Connect</h2>
+        <p>Open to opportunities in Health Informatics and Data Analytics.</p>
+        <a href="mailto:rutvipat0799@gmail.com" class="btn btn-primary btn-lg">Say Hello</a>
+        
+        <div class="footer-bottom">
+          <p>© 2025 Rutvi Patel. All Rights Reserved.</p>
+          <p class="location"><i class="fas fa-map-marker-alt"></i> Chicago, IL</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
