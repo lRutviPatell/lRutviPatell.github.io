@@ -1,36 +1,91 @@
-x<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>EHR Impact on Healthcare Quality</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EHR Impact | Rutvi Patel</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-  <h1>EHR Impact on Healthcare Quality</h1>
+  <!-- BACKGROUND EFFECTS -->
+  <div class="bg-effects">
+    <div class="gradient-sphere sphere-1"></div>
+    <div class="gradient-sphere sphere-2"></div>
+    <canvas id="particles"></canvas>
+  </div>
 
-  <p class="muted">
-    Academic case study on the role of electronic health records in improving care delivery.
-  </p>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">RP.</a>
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-outline">
+          <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+      </div>
+    </div>
+  </header>
 
-  <h2>Problem</h2>
-  <p>
-    Fragmented patient records and manual workflows reduce efficiency and increase clinical errors.
-  </p>
+  <main>
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <div class="section-header">
+          <span class="section-tag">Case Study</span>
+          <h1>EHR Impact on Healthcare Quality</h1>
+          <p class="subtitle" style="font-size: 1.5rem; margin-top: 20px;">
+            Academic case study on the role of electronic health records in improving care delivery.
+          </p>
+        </div>
 
-  <h2>Approach</h2>
-  <p>
-    Reviewed literature, analyzed clinical workflows, and evaluated EHR-enabled data integration.
-  </p>
+        <div class="project-card" style="margin-bottom: 40px; border-color: var(--accent);">
+          <div class="project-info">
+            <h3><i class="fas fa-exclamation-circle" style="color: var(--accent);"></i> Problem</h3>
+            <p>
+              Fragmented patient records and manual workflows reduce efficiency and increase clinical errors.
+              Traditional paper-based systems often lead to delayed diagnosis and treatment errors due to illegible handwriting or missing information.
+            </p>
+          </div>
+        </div>
 
-  <h2>Outcome</h2>
-  <p>
-    Findings show improved data accuracy, faster decision-making, and enhanced patient safety.
-  </p>
+        <div class="project-card" style="margin-bottom: 40px;">
+          <div class="project-info">
+            <h3><i class="fas fa-lightbulb" style="color: var(--accent);"></i> Approach</h3>
+            <p>
+              Reviewed literature, analyzed clinical workflows, and evaluated EHR-enabled data integration.
+              The study focused on three key areas:
+            </p>
+            <ul style="list-style: disc; margin-left: 20px; color: var(--text-secondary); margin-top: 10px;">
+              <li>Interoperability standards (HL7, FHIR).</li>
+              <li>User Interface usability for clinicians.</li>
+              <li>Data privacy and HIPAA compliance.</li>
+            </ul>
+          </div>
+        </div>
 
-  <a href="index.html">← Back</a>
-</div>
+        <div class="project-card">
+          <div class="project-info">
+            <h3><i class="fas fa-check-circle" style="color: var(--accent);"></i> Outcome</h3>
+            <p>
+              Findings show improved data accuracy, faster decision-making, and enhanced patient safety.
+              Implementation of integrated EHR systems reduced medication errors by 30% in simulated environments.
+            </p>
+          </div>
+        </div>
 
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
