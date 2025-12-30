@@ -2,29 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Rutvi Patel – Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume | Rutvi Patel</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-  <h1>Rutvi Jagdishkumar Patel</h1>
-  <p class="muted">Health Informatics · Pharm D · Healthcare Analytics</p>
+  <!-- BACKGROUND EFFECTS -->
+  <div class="bg-effects">
+    <div class="gradient-sphere sphere-1"></div>
+    <div class="gradient-sphere sphere-2"></div>
+    <canvas id="particles"></canvas>
+  </div>
 
-  <h2>Education</h2>
-  <p><strong>M.S. Health Informatics</strong>, DePaul University</p>
-  <p><strong>Doctor of Pharmacy</strong>, L.M. College of Pharmacy</p>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">RP.</a>
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-outline">
+          <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+        <a href="Rutvi_Patel_Resume.pdf" download class="btn btn-primary">
+          Download PDF <i class="fas fa-download"></i>
+        </a>
+      </div>
+    </div>
+  </header>
 
-  <h2>Skills</h2>
-  <p>Python, SQL, Tableau, Power BI, EHR Systems, ICD-10-CM</p>
+  <main>
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <div class="section-header">
+          <span class="section-tag">Curriculum Vitae</span>
+          <h1>Resume</h1>
+        </div>
 
-  <h2>Experience</h2>
-  <p><strong>Pharm D Intern — GCS Medical College</strong></p>
-  <p>EHR documentation, ADR reporting, clinical support</p>
+        <div class="project-card" style="margin-bottom: 30px;">
+          <div class="project-info">
+            <h2 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--accent);">Education</h2>
+            <div style="margin-bottom: 20px;">
+              <h3 style="font-size: 1.2rem;">M.S. Health Informatics</h3>
+              <p style="color: var(--text-secondary);">DePaul University</p>
+            </div>
+            <div>
+              <h3 style="font-size: 1.2rem;">Doctor of Pharmacy</h3>
+              <p style="color: var(--text-secondary);">L.M. College of Pharmacy</p>
+            </div>
+          </div>
+        </div>
 
-  <p class="mt"><strong>Pharm D Intern — Zydus Hospitals</strong></p>
-  <p>Prescription audits, medication counseling</p>
-</div>
+        <div class="project-card" style="margin-bottom: 30px;">
+          <div class="project-info">
+            <h2 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--accent);">Experience</h2>
+            <div style="margin-bottom: 20px;">
+              <h3 style="font-size: 1.2rem;">Pharm D Intern</h3>
+              <p style="color: var(--text-secondary);">GCS Medical College</p>
+              <ul style="list-style: disc; margin-left: 20px; color: var(--text-secondary); margin-top: 5px;">
+                <li>EHR documentation and ADR reporting.</li>
+                <li>Clinical drug information support.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 style="font-size: 1.2rem;">Pharm D Intern</h3>
+              <p style="color: var(--text-secondary);">Zydus Hospitals</p>
+              <ul style="list-style: disc; margin-left: 20px; color: var(--text-secondary); margin-top: 5px;">
+                <li>Prescription audits and patient counseling.</li>
+                <li>Treatment guideline implementation.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
+        <div class="project-card">
+          <div class="project-info">
+            <h2 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--accent);">Skills</h2>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Tableau</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">EHR Systems</span>
+              <span class="tag">ICD-10-CM</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
